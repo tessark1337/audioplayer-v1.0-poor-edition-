@@ -1,7 +1,7 @@
 import sys
 import os
 import pygame
-from PyQt5 import uic  # Импортируем uic
+from PyQt5 import uic  
 from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog, QGraphicsBlurEffect, QWidget
 from PyQt5.QtCore import QTimer, QTime
 
@@ -9,11 +9,6 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         uic.loadUi('Design/audioplayer.ui', self) 
-
-        self.blurOverlay = QWidget(self)
-        self.blurOverlay.setGeometry(self.rect())
-        self.blurOverlay.setStyleSheet("background-color: rgba(0, 0, 0, 0.5);")
-        self.blurOverlay.setVisible(False)
 
         pygame.mixer.init()
         self.playing = False
